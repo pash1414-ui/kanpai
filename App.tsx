@@ -152,7 +152,7 @@ const App: React.FC = () => {
                 <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-4xl">🍻</span>
                 </div>
-                <h1 className="text-2xl font-bold text-slate-900 mb-2">Kanpai Master</h1>
+                <h1 className="text-2xl font-bold text-slate-900 mb-2">乾杯マスター</h1>
                 <p className="text-slate-500 mb-8 text-sm">今日は何の飲み会？<br/>名前をつけてスタートしましょう！</p>
                 
                 <form onSubmit={startParty} className="space-y-4">
@@ -183,7 +183,7 @@ const App: React.FC = () => {
       <header className="px-4 pt-10 pb-2">
         <div className="flex justify-between items-center max-w-3xl mx-auto mb-2">
             <h1 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                <span className="text-2xl">🍻</span> Kanpai Master
+                <span className="text-2xl">🍻</span> 乾杯マスター
             </h1>
             <button 
                 onClick={() => setShowResetConfirm(true)} 

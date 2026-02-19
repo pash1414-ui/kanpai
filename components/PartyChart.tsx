@@ -29,11 +29,12 @@ const PartyChart: React.FC<PartyChartProps> = ({ users, partyName }) => {
         <h2 className="text-orange-50 text-xl font-black tracking-widest uppercase mb-1 drop-shadow-md break-words px-2">
             {partyName}
         </h2>
-        <div className="flex items-center justify-center gap-4">
-            <span className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-orange-100 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] font-mono tracking-tighter">
+        {/* Added pl-4 to container and pr-2 to text to prevent clipping while maintaining visual center */}
+        <div className="flex items-center justify-center gap-4 pl-4">
+            <span className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-orange-100 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)] font-mono tracking-tighter py-2 pr-2">
                 {totalDrinks}
             </span>
-            <span className="text-2xl text-orange-100 font-bold self-end mb-3">杯</span>
+            <span className="text-2xl text-orange-100 font-bold self-end mb-4">杯</span>
         </div>
       </div>
       
@@ -52,7 +53,7 @@ const PartyChart: React.FC<PartyChartProps> = ({ users, partyName }) => {
                     <div key={user.id} className="relative">
                         <div className="flex items-center gap-3 mb-1.5 relative z-10">
                             {/* Rank Badge */}
-                            <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shadow-sm
+                            <div className={`w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold shadow-sm flex-shrink-0
                                 ${isTop ? 'bg-yellow-400 text-yellow-900 ring-2 ring-yellow-200/50' : 'bg-white/20 text-white'}`}>
                                 {isTop ? <Trophy size={12} /> : index + 1}
                             </div>
@@ -62,8 +63,8 @@ const PartyChart: React.FC<PartyChartProps> = ({ users, partyName }) => {
                                 {user.name}
                             </span>
                             
-                            {/* Count */}
-                            <div className="font-mono text-xl font-bold text-white flex items-baseline">
+                            {/* Count - Increased right padding to pr-3 and added flex-shrink-0 to prevent clipping */}
+                            <div className="font-mono text-xl font-bold text-white flex items-baseline pr-3 flex-shrink-0">
                                 <span>{user.drinks.length}</span>
                                 <span className="text-xs text-orange-200 font-normal ml-2">杯</span>
                             </div>
